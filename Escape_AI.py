@@ -11,7 +11,6 @@ def	main():
 	
 	# Set window environment
 	escapeAI.window.setEnv((1300, 700), "Escape AI");
-	escapeAI.window.drawFloor();
 
 	# Add characters
 	escapeAI.addAiCharacter(bear);
