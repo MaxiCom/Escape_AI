@@ -1,21 +1,21 @@
 #!/usr/bin/python2.7
 from modules import core
 from modules import ai
+from modules.childGlobalFunctions import *
+from random import randint
 
 def	main():
 	# init core
 	escapeAI = core.EscapeAI();
 
-	# init ai characters with (x, y) pos
-	bear = ai.Bear((1000, 600));
+	# init ai bear with (x, y) pos
+	bear = ai.Bear((randint(50, 1250), randint(50, 650)));
 	
 	# Set window environment
-	escapeAI.window.setEnv((1300, 700), "Escape AI");
+	escapeAI.window.setEnv((WINDOW_WIDTH, WINDOW_HEIGHT), WINDOW_NAME);
 
-	# Add characters
+	# Add bear and display window
 	escapeAI.addAiCharacter(bear);
-
-	# Display window
 	escapeAI.window.display();
 
 if __name__ == "__main__":

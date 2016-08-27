@@ -40,12 +40,12 @@ def	getNewPosition(characterList):
 		if (xDifference >= yDifference):
 			if (human.x < bear.x and bear.x > 0):
 				bear.x -= 1;
-			elif (bear.x < 1300):
+			elif (bear.x < WINDOW_WIDTH):
 				bear.x += 1;
 		else:
 			if (human.y < bear.y and bear.y > 0):
 				bear.y -= 1;
-			elif (bear.y < 700):
+			elif (bear.y < WINDOW_HEIGHT):
 				bear.y += 1;
 	else:
 		errorMessage("Human is dead at x: " + str(human.x) + ", y: " + str(human.y));
@@ -62,11 +62,11 @@ def	getNewPosition(characterList):
 			if (xDifference >= yDifference):
 				if (human.y < bear.y and human.y > 0):
 					human.y -= 1;
-				elif (human.y < 700):
+				elif (human.y < WINDOW_HEIGHT):
 					human.y += 1;
 			else:
 				if (human.x < bear.x and human.x > 0):
 					human.x -= 1;
-				elif (human.x < 1300):
+				elif (human.x < WINDOW_WIDTH):
 					human.x += 1;
 	"""

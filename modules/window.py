@@ -3,7 +3,6 @@ from modules import ai
 import pygame
 import sys
 
-
 class Window:
 	def __init__(self):
 		# init pygame
