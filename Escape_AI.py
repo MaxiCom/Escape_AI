@@ -14,7 +14,7 @@ def	main():
 	# Set window environment
 	escapeAI.window.setEnv((WINDOW_WIDTH, WINDOW_HEIGHT), WINDOW_NAME);
 
-	# Add bear and display window
+	# Add the bear and display window
 	escapeAI.addAiCharacter(bear);
 	escapeAI.window.display();
 

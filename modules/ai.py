@@ -4,6 +4,7 @@ import math
 class Bear:
 	charType = "Bear";
 	color = RED;
+	speed = BEAR_SPEED;
 	
 	def __init__(self, (x, y)):
 		self.x = x;
@@ -12,6 +13,7 @@ class Bear:
 class Human:
 	charType = "Human";
 	color = BLUE;
+	speed = HUMAN_SPEED;
 
 	def __init__(self, (x, y)):
 		self.x = x;
@@ -36,37 +38,35 @@ def	getNewPosition(characterList):
 	yDifference = math.fabs(human.y - bear.y);
 
 	# Bear
-	if (xDifference != 0 or yDifference != 0):
+	if (xDifference + yDifference > 5):
 		if (xDifference >= yDifference):
 			if (human.x < bear.x and bear.x > 0):
-				bear.x -= 1;
+				bear.x -= bear.speed;
 			elif (bear.x < WINDOW_WIDTH):
-				bear.x += 1;
+				bear.x += bear.speed;
 		else:
 			if (human.y < bear.y and bear.y > 0):
-				bear.y -= 1;
+				bear.y -= bear.speed;
 			elif (bear.y < WINDOW_HEIGHT):
-				bear.y += 1;
+				bear.y += bear.speed;
 	else:
 		errorMessage("Human is dead at x: " + str(human.x) + ", y: " + str(human.y));
 		characterList.remove(characterList[indexChoosen]);
 
-	"""	
 	# Human
 	for human in characterList:	
 	
 		xDifference = math.fabs(human.x - bear.x);
 		yDifference = math.fabs(human.y - bear.y);
-		
-		if (xDifference != 0 or yDifference != 0):
+
+		if (xDifference + yDifference > 5):
 			if (xDifference >= yDifference):
 				if (human.y < bear.y and human.y > 0):
-					human.y -= 1;
+					human.y -= human.speed;
 				elif (human.y < WINDOW_HEIGHT):
-					human.y += 1;
+					human.y += human.speed;
 			else:
 				if (human.x < bear.x and human.x > 0):
-					human.x -= 1;
+					human.x -= human.speed;
 				elif (human.x < WINDOW_WIDTH):
-					human.x += 1;
-	"""
+					human.x += human.speed;
